@@ -1,0 +1,116 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem 4rem;
+}
+
+/* Hero */
+.app-hero {
+  padding: 5rem 0 3rem;
+  position: relative;
+}
+
+.app-hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.app-hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.app-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--color-cream);
+}
+
+.app-hero-title em {
+  font-style: italic;
+  color: var(--color-gold);
+}
+
+.app-hero-tagline {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--color-muted);
+  margin-top: 0.4rem;
+}
+
+.app-hero-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-gold-dim) 0%, transparent 60%);
+}
+
+/* Controls */
+.app-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 0 1.75rem;
+}
+
+.app-clear-filter {
+  background: none;
+  border: none;
+  color: var(--color-muted);
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.app-clear-filter:hover {
+  color: var(--color-cream);
+}
+
+/* Footer */
+.app-footer {
+  border-top: 1px solid var(--color-border);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-footer-brand {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  color: var(--color-muted);
+}
+
+.app-footer-copy {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 300;
+  color: var(--color-border);
+}

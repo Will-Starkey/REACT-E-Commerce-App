@@ -1,0 +1,88 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-list-error {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--color-muted);
+  font-family: var(--font-body);
+}
+
+.product-list-error p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #c0392b;
+}
+
+.product-list-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+/* Skeleton */
+.skeleton-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.skeleton-image {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+}
+
+.skeleton-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skeleton-line {
+  height: 0.85rem;
+  border-radius: 2px;
+}
+
+.skeleton-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.skeleton-price {
+  width: 70px;
+  height: 1.2rem;
+  border-radius: 2px;
+}
+
+.skeleton-btn {
+  width: 90px;
+  height: 30px;
+  border-radius: 2px;
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 25%,
+    rgba(201, 168, 76, 0.08) 50%,
+    var(--color-border) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

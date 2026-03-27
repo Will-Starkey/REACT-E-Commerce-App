@@ -1,0 +1,54 @@
+.category-filter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category-filter-label {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.category-filter-select-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.category-filter-select {
+  appearance: none;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  padding: 0.6rem 2.5rem 0.6rem 1rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+  min-width: 200px;
+}
+
+.category-filter-select:hover,
+.category-filter-select:focus {
+  border-color: var(--color-gold-dim);
+}
+
+.category-filter-select option {
+  background: var(--color-surface);
+  color: var(--color-cream);
+}
+
+.category-filter-chevron {
+  position: absolute;
+  right: 0.75rem;
+  color: var(--color-gold);
+  pointer-events: none;
+}
