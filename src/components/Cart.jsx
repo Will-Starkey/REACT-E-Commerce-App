@@ -1,18 +1,39 @@
+import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { clearCart } from '../store/cartSlice'
+import { useAuth } from '../hooks/useAuth'
+import { createOrder } from '../firebase/orderService'
 import CartItem from './CartItem'
 import './Cart.css'
 
 export default function Cart({ isOpen, onClose, onCheckout }) {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const { user } = useAuth()
   const items = useSelector((s) => s.cart.items)
   const totalCount = items.reduce((sum, i) => sum + i.count, 0)
   const totalPrice = items.reduce((sum, i) => sum + i.price * i.count, 0)
+  const [submitting, setSubmitting] = useState(false)
 
-  function handleCheckout() {
-    dispatch(clearCart())
-    onClose()
-    onCheckout()
+  async function handleCheckout() {
+    if (!user) {
+      onClose()
+      navigate('/login', { state: { from: '/' } })
+      return
+    }
+
+    setSubmitting(true)
+    try {
+      await createOrder(user.uid, items, totalPrice, totalCount)
+      dispatch(clearCart())
+      onClose()
+      onCheckout()
+    } catch (err) {
+      console.error('Order failed:', err)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -56,6 +77,9 @@ export default function Cart({ isOpen, onClose, onCheckout }) {
 
         {items.length > 0 && (
           <div className="cart-footer">
+            {!user && (
+              <p className="cart-auth-notice">Sign in required to complete your purchase</p>
+            )}
             <div className="cart-summary">
               <div className="cart-summary-row">
                 <span>Total items</span>
@@ -66,8 +90,12 @@ export default function Cart({ isOpen, onClose, onCheckout }) {
                 <span>${totalPrice.toFixed(2)}</span>
               </div>
             </div>
-            <button className="cart-checkout-btn" onClick={handleCheckout}>
-              Complete Purchase
+            <button
+              className="cart-checkout-btn"
+              onClick={handleCheckout}
+              disabled={submitting}
+            >
+              {submitting ? 'Placing order…' : user ? 'Complete Purchase' : 'Sign In to Checkout'}
             </button>
           </div>
         )}

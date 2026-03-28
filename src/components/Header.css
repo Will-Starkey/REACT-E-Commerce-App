@@ -56,10 +56,34 @@
   color: var(--color-muted);
   cursor: pointer;
   transition: color 0.2s;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 .header-nav-item:hover {
   color: var(--color-cream);
+}
+
+.header-nav-item--cta {
+  color: var(--color-gold);
+}
+
+.header-nav-item--cta:hover {
+  color: #d4b460;
+}
+
+.header-nav-item--admin {
+  color: #a0c4a0;
+}
+
+.header-nav-item--admin:hover {
+  color: #c0e0c0;
+}
+
+.header-nav-logout {
+  cursor: pointer;
 }
 
 .header-cart-btn {

@@ -1,0 +1,153 @@
+/* ── Auth Page Layout ─────────────────────────────────────── */
+.auth-page {
+  min-height: calc(100vh - 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: var(--color-bg, #0f0e0c);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: #1a1714;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 4px;
+  padding: 2.5rem 2rem;
+}
+
+.auth-card-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.auth-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #f5f0e8;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.4rem;
+}
+
+.auth-subtitle {
+  font-size: 0.8rem;
+  color: #8a7d6b;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ── Form ─────────────────────────────────────────────────── */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.auth-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a7d6b;
+}
+
+.auth-input {
+  background: #0f0e0c;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 2px;
+  padding: 0.7rem 0.9rem;
+  color: #f5f0e8;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.auth-input::placeholder {
+  color: #4a4035;
+}
+
+.auth-input:focus {
+  border-color: rgba(201, 168, 76, 0.6);
+}
+
+.auth-error {
+  background: rgba(180, 60, 60, 0.15);
+  border: 1px solid rgba(180, 60, 60, 0.4);
+  border-radius: 2px;
+  padding: 0.65rem 0.9rem;
+  color: #e07070;
+  font-size: 0.83rem;
+  margin: 0;
+}
+
+.auth-submit {
+  margin-top: 0.5rem;
+  background: #c9a84c;
+  color: #0f0e0c;
+  border: none;
+  border-radius: 2px;
+  padding: 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.auth-submit:hover:not(:disabled) {
+  background: #d4b460;
+}
+
+.auth-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Switch Link ──────────────────────────────────────────── */
+.auth-switch {
+  margin: 1.5rem 0 0;
+  text-align: center;
+  font-size: 0.82rem;
+  color: #8a7d6b;
+}
+
+.auth-switch-link {
+  color: #c9a84c;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-switch-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Auth loading spinner (used in RequireAuth) ───────────── */
+.auth-loading {
+  min-height: calc(100vh - 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 2px solid rgba(201, 168, 76, 0.2);
+  border-top-color: #c9a84c;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,259 @@
+.admin-page {
+  min-height: calc(100vh - 160px);
+  padding: 3rem 1.5rem;
+  background: var(--color-bg, #0f0e0c);
+}
+
+.admin-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Header ───────────────────────────────────────── */
+.admin-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.admin-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #f5f0e8;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.admin-seed {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: flex-end;
+}
+
+.admin-seed-btn {
+  background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  color: #c9a84c;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.admin-seed-btn:hover:not(:disabled) {
+  background: rgba(201, 168, 76, 0.08);
+  border-color: #c9a84c;
+}
+
+.admin-seed-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-seed-status {
+  font-size: 0.72rem;
+  color: #8a7d6b;
+  text-align: right;
+  margin: 0;
+}
+
+/* ── Sections ─────────────────────────────────────── */
+.admin-section-title {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin: 0 0 1.25rem;
+}
+
+.admin-form-section {
+  background: #1a1714;
+  border: 1px solid rgba(201, 168, 76, 0.12);
+  border-radius: 2px;
+  padding: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Form Grid ────────────────────────────────────── */
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.25rem;
+}
+
+.admin-field-full {
+  grid-column: 1 / -1;
+}
+
+.admin-textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+.admin-form-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.admin-save-btn {
+  margin-top: 0;
+}
+
+/* ── Table ────────────────────────────────────────── */
+.admin-table-section {
+  background: #1a1714;
+  border: 1px solid rgba(201, 168, 76, 0.12);
+  border-radius: 2px;
+  padding: 1.75rem;
+}
+
+.admin-loading,
+.admin-empty {
+  font-size: 0.85rem;
+  color: #8a7d6b;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.admin-table thead tr {
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.admin-table th {
+  text-align: left;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a7d6b;
+  padding: 0 0.75rem 0.75rem;
+}
+
+.admin-table td {
+  padding: 0.9rem 0.75rem;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.06);
+  color: #f5f0e8;
+  vertical-align: middle;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-row--editing td {
+  background: rgba(201, 168, 76, 0.05);
+}
+
+.admin-product-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: #0f0e0c;
+  border-radius: 2px;
+  display: block;
+}
+
+.admin-product-title {
+  max-width: 240px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-product-price {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1rem;
+  color: #c9a84c;
+}
+
+.admin-category-badge {
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  background: rgba(201, 168, 76, 0.1);
+  color: #c9a84c;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  white-space: nowrap;
+}
+
+/* ── Row Actions ──────────────────────────────────── */
+.admin-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.admin-edit-btn {
+  background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: #c9a84c;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+
+.admin-edit-btn:hover {
+  background: rgba(201, 168, 76, 0.1);
+}
+
+.admin-delete-btn {
+  background: transparent;
+  border: 1px solid rgba(180, 60, 60, 0.3);
+  color: #e07070;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+
+.admin-delete-btn:hover:not(:disabled) {
+  background: rgba(180, 60, 60, 0.1);
+}
+
+.admin-delete-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .admin-field-full {
+    grid-column: 1;
+  }
+}

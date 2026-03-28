@@ -1,0 +1,173 @@
+.orders-page {
+  min-height: calc(100vh - 160px);
+  padding: 3rem 1.5rem;
+  background: var(--color-bg, #0f0e0c);
+}
+
+.orders-page-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.orders-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #f5f0e8;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.3rem;
+}
+
+.orders-subtitle {
+  font-size: 0.78rem;
+  color: #8a7d6b;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 2.5rem;
+}
+
+/* ── Loading skeletons ────────────────────────────── */
+.orders-loading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.order-skeleton {
+  height: 72px;
+  background: linear-gradient(90deg, #1a1714 25%, #222 50%, #1a1714 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 2px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Empty ────────────────────────────────────────── */
+.orders-error {
+  color: #e07070;
+  font-size: 0.85rem;
+}
+
+.orders-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #8a7d6b;
+}
+
+.orders-empty-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #f5f0e8;
+  margin: 0 0 0.5rem;
+}
+
+.orders-empty-sub {
+  font-size: 0.82rem;
+  margin: 0 0 1.5rem;
+}
+
+.orders-shop-link {
+  display: inline-block;
+  background: #c9a84c;
+  color: #0f0e0c;
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+
+.orders-shop-link:hover {
+  background: #d4b460;
+}
+
+/* ── List ─────────────────────────────────────────── */
+.orders-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.order-row {
+  background: #1a1714;
+  border: 1px solid rgba(201, 168, 76, 0.12);
+  border-radius: 2px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.order-row:hover {
+  border-color: rgba(201, 168, 76, 0.35);
+  background: #1e1b18;
+}
+
+.order-row-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.order-row-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.order-id {
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: #c9a84c;
+  letter-spacing: 0.05em;
+}
+
+.order-date {
+  font-size: 0.82rem;
+  color: #f5f0e8;
+}
+
+.order-items-count {
+  font-size: 0.73rem;
+  color: #8a7d6b;
+}
+
+.order-row-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  color: #8a7d6b;
+}
+
+.order-total {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #f5f0e8;
+}
+
+.order-status {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+}
+
+.order-status--confirmed {
+  background: rgba(80, 160, 80, 0.15);
+  color: #6abf6a;
+  border: 1px solid rgba(80, 160, 80, 0.3);
+}

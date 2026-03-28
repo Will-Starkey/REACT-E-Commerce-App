@@ -1,0 +1,151 @@
+.order-detail-page {
+  min-height: calc(100vh - 160px);
+  padding: 3rem 1.5rem;
+  background: var(--color-bg, #0f0e0c);
+}
+
+.order-detail-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.order-detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a7d6b;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: color 0.2s;
+}
+
+.order-detail-back:hover {
+  color: #c9a84c;
+}
+
+.order-detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  gap: 1rem;
+}
+
+.order-detail-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.9rem;
+  font-weight: 400;
+  color: #f5f0e8;
+  margin: 0 0 0.35rem;
+}
+
+.order-detail-date {
+  font-size: 0.78rem;
+  color: #8a7d6b;
+  margin: 0;
+}
+
+/* ── Items ────────────────────────────────────────── */
+.order-detail-items {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid rgba(201, 168, 76, 0.12);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.order-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: #1a1714;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+}
+
+.order-detail-item:last-child {
+  border-bottom: none;
+}
+
+.order-detail-item-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  background: #0f0e0c;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.order-detail-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.order-detail-item-title {
+  font-size: 0.85rem;
+  color: #f5f0e8;
+  margin: 0 0 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.order-detail-item-qty {
+  font-size: 0.73rem;
+  color: #8a7d6b;
+  margin: 0;
+}
+
+.order-detail-item-price {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  color: #f5f0e8;
+  flex-shrink: 0;
+}
+
+/* ── Summary ──────────────────────────────────────── */
+.order-detail-summary {
+  background: #1a1714;
+  border: 1px solid rgba(201, 168, 76, 0.12);
+  border-radius: 2px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.order-detail-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #8a7d6b;
+}
+
+.order-detail-summary-row--total {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #f5f0e8;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.order-detail-loading {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #8a7d6b;
+  font-size: 0.85rem;
+}
+
+.order-detail-error {
+  color: #e07070;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}

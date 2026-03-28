@@ -1,24 +1,17 @@
 import { useQuery } from '@tanstack/react-query'
-
-const BASE = 'https://fakestoreapi.com'
-
-async function fetchJSON(url) {
-  const res = await fetch(url)
-  if (!res.ok) throw new Error(`Request failed: ${res.status}`)
-  return res.json()
-}
+import { getAllProducts, getProductsByCategory } from '../firebase/productService'
 
 export function useAllProducts() {
   return useQuery({
     queryKey: ['products'],
-    queryFn: () => fetchJSON(`${BASE}/products`),
+    queryFn: getAllProducts,
   })
 }
 
 export function useProductsByCategory(category) {
   return useQuery({
     queryKey: ['products', category],
-    queryFn: () => fetchJSON(`${BASE}/products/category/${encodeURIComponent(category)}`),
+    queryFn: () => getProductsByCategory(category),
     enabled: !!category,
   })
 }
@@ -26,6 +19,10 @@ export function useProductsByCategory(category) {
 export function useCategories() {
   return useQuery({
     queryKey: ['categories'],
-    queryFn: () => fetchJSON(`${BASE}/products/categories`),
+    queryFn: async () => {
+      const products = await getAllProducts()
+      const cats = [...new Set(products.map((p) => p.category).filter(Boolean))]
+      return cats.sort()
+    },
   })
 }

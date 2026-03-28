@@ -1,22 +1,48 @@
 import { useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../hooks/useAuth'
+import { logoutUser } from '../firebase/authService'
 import './Header.css'
 
 export default function Header({ onCartClick }) {
   const items = useSelector((s) => s.cart.items)
   const totalCount = items.reduce((sum, i) => sum + i.count, 0)
+  const { user } = useAuth()
+  const navigate = useNavigate()
+
+  async function handleLogout() {
+    await logoutUser()
+    navigate('/')
+  }
 
   return (
     <header className="header">
       <div className="header-inner">
-        <div className="header-wordmark">
+        <Link to="/" className="header-wordmark" style={{ textDecoration: 'none' }}>
           <span className="header-wordmark-main">LUXE</span>
           <span className="header-wordmark-sub">BOUTIQUE</span>
-        </div>
+        </Link>
 
         <nav className="header-nav">
-          <span className="header-nav-item">New Arrivals</span>
-          <span className="header-nav-item">Collections</span>
-          <span className="header-nav-item">About</span>
+          {user ? (
+            <>
+              <Link className="header-nav-item" to="/orders">My Orders</Link>
+              <Link className="header-nav-item" to="/profile">Profile</Link>
+              {user.isAdmin && (
+                <Link className="header-nav-item header-nav-item--admin" to="/admin/products">
+                  Admin
+                </Link>
+              )}
+              <button className="header-nav-item header-nav-logout" onClick={handleLogout}>
+                Sign Out
+              </button>
+            </>
+          ) : (
+            <>
+              <Link className="header-nav-item" to="/login">Sign In</Link>
+              <Link className="header-nav-item header-nav-item--cta" to="/register">Register</Link>
+            </>
+          )}
         </nav>
 
         <button className="header-cart-btn" onClick={onCartClick} aria-label="Open cart">
