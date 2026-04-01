@@ -2,7 +2,7 @@
 
 A full-featured e-commerce application built with React, Redux Toolkit, Firebase, and Vite.
 
-**Live App:** [https://react-e-commerce-app-willstarkey.vercel.app](https://react-e-commerce-app-willstarkey.vercel.app](https://react-e-commerce-ngn97tfgw-will-starkeys-projects.vercel.app/)
+**Live App:** [[https://react-e-commerce-app-willstarkey.vercel.app](https://react-e-commerce-app-willstarkey.vercel.app](https://react-e-commerce-ngn97tfgw-will-starkeys-projects.vercel.app/)](https://react-e-commerce-app-teal.vercel.app/)
 
 ## Features
 
