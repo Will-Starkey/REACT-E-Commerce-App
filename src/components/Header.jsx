@@ -6,7 +6,7 @@ import './Header.css'
 
 export default function Header({ onCartClick }) {
   const items = useSelector((s) => s.cart.items)
-  const totalCount = items.reduce((sum, i) => sum + i.count, 0)
+  const totalCount = items.reduce((sum, i) => sum + 1, 0) // BUG: counts items, not quantities
   const { user } = useAuth()
   const navigate = useNavigate()
 
